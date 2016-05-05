@@ -6,7 +6,7 @@ namespace Trainer.Core.Tester
 	{
 		static void Main(string[] args)
 		{
-			Player p = new Player("n", "s", new System.DateTime(1977, 7, 30));
+			Player p = new Player("a", "r", new System.DateTime(1977, 7, 30), Role.Trq);
 			Console.WriteLine(p);
 			Console.ReadKey();
 		}

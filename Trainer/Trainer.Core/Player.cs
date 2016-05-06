@@ -1,20 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Trainer.Core
 {
 	public class Player : Person
 	{
-		public Player(string name, string surname, DateTime dayOfBirth, Role role)
+		private readonly List<Role> _roles;
+
+		public Player(string name, string surname, DateTime dayOfBirth)
 			: base(name, surname, dayOfBirth)
 		{
-			Role = role;
+			_roles = new List<Role>();
 		}
 
-		public Role Role { get; private set; }
+		public List<Role> Roles { get { return _roles; } }
+
+		public void AddRole(Role role)
+		{
+			_roles.Add(role);
+		}
 
 		public override string ToString()
 		{
-			return string.Format("{0} Role:{1}",base.ToString(), Role);
+			return base.ToString();
 		}
 	}
 }

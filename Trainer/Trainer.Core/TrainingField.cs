@@ -12,6 +12,7 @@ namespace Trainer.Core
 		{
 			Address = address;
 		}
+		public int Id { get; set; }
 
 		public string Address { get; private set; }
 		

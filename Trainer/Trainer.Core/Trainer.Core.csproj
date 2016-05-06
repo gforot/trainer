@@ -53,6 +53,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
+    <Compile Include="TrainerContext.cs" />
     <Compile Include="Training.cs" />
     <Compile Include="TrainingField.cs" />
   </ItemGroup>

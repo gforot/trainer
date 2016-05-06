@@ -13,6 +13,8 @@ namespace Trainer.Core
 			_roles = new List<Role>();
 		}
 
+
+
 		public List<Role> Roles { get { return _roles; } }
 
 		public void AddRole(Role role)

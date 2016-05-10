@@ -7,6 +7,11 @@ namespace Trainer.Core
 	{
 		private readonly List<Role> _roles;
 
+		public Player() : base()
+		{
+			_roles = new List<Role>();
+		}
+
 		public Player(string name, string surname, DateTime dayOfBirth)
 			: base(name, surname, dayOfBirth)
 		{

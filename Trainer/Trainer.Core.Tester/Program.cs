@@ -8,17 +8,21 @@ namespace Trainer.Core.Tester
 		{
 			using (var ctx = new TrainerContext())
 			{
-				Player stud = new Player("a", "r", new DateTime(1977, 7, 30));
-				stud.AddRole(Role.ACen);
-				stud.AddRole(Role.Trq);
-				ctx.Players.Add(stud);
-				ctx.SaveChanges();
+				foreach(Player p1 in ctx.Players)
+				{
+					Console.WriteLine(string.Format("Player {0}", p1.ToString()));
+				}
 			}
-	
 
 
 
-		Player p = new Player("a", "r", new DateTime(1977, 7, 30));
+
+
+			//Player p = new Player("a", "r", new DateTime(1977, 7, 30));
+			Player p = new Player();
+			p.Name = "a";
+			p.Surname = "r";
+			p.DayOfBirth = new DateTime(1977,7,30);
 			p.AddRole(Role.Trq);
 			p.AddRole(Role.ACen);
 			p.AddRole(Role.AEst);

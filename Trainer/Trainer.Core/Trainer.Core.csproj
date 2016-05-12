@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\TrainerContextHelper.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="StaffPerson.cs" />
     <Compile Include="StaffRole.cs" />
     <Compile Include="Team.cs" />
-    <Compile Include="TrainerContext.cs" />
+    <Compile Include="Context\TrainerContext.cs" />
     <Compile Include="Training.cs" />
     <Compile Include="TrainingField.cs" />
   </ItemGroup>

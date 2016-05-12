@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Trainer.Core
 {
 	public class Training
 	{
-		public Training(TrainingField field)
+		public Training()
 		{
 
 		}
 
-		public TrainingField Field { get; private set; }
+		[Key]
+		public int TrainingID { get; set; }
 
-		public IEnumerable<Player> PresentPlayers { get; private set; }
+		public virtual TrainingField Field { get; set; }
+
+		public virtual ICollection<Player> PresentPlayers { get; set; }
 
 
 	}

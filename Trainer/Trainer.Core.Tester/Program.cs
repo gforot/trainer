@@ -1,4 +1,5 @@
 ﻿using System;
+using Trainer.Core.Context;
 
 namespace Trainer.Core.Tester
 {
@@ -6,27 +7,22 @@ namespace Trainer.Core.Tester
 	{
 		static void Main(string[] args)
 		{
-			using (var ctx = new TrainerContext())
+			Player p = new Player()
 			{
-				foreach(Player p1 in ctx.Players)
-				{
-					Console.WriteLine(string.Format("Player {0}", p1.ToString()));
-				}
+				Name = "Andrea",
+				Surname = "Tentori",
+				DayOfBirth = new DateTime(1994, 7, 12),
+				Role = Role.DCen | Role.TSin,
+			};
+			TrainerContextHelper.AddPlayer(p);
+
+
+			foreach(Player p1 in TrainerContextHelper.GetPlayers())
+			{
+				Console.WriteLine(string.Format("Player {0}", p1.ToString()));
 			}
 
 
-
-
-
-			//Player p = new Player("a", "r", new DateTime(1977, 7, 30));
-			Player p = new Player();
-			p.Name = "a";
-			p.Surname = "r";
-			p.DayOfBirth = new DateTime(1977,7,30);
-			p.AddRole(Role.Trq);
-			p.AddRole(Role.ACen);
-			p.AddRole(Role.AEst);
-			Console.WriteLine(p);
 			Console.ReadKey();
 		}
 	}

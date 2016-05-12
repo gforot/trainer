@@ -5,31 +5,16 @@ namespace Trainer.Core
 {
 	public class Player : Person
 	{
-		private readonly List<Role> _roles;
-
 		public Player() : base()
 		{
-			_roles = new List<Role>();
+			
 		}
 
-		public Player(string name, string surname, DateTime dayOfBirth)
-			: base(name, surname, dayOfBirth)
-		{
-			_roles = new List<Role>();
-		}
-
-
-
-		public List<Role> Roles { get { return _roles; } }
-
-		public void AddRole(Role role)
-		{
-			_roles.Add(role);
-		}
+		public Role Role { get; set; }
 
 		public override string ToString()
 		{
-			return base.ToString();
+			return string.Format("{0};role:{1};", base.ToString(), Role);
 		}
 	}
 }

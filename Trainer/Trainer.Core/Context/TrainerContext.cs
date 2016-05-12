@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
-namespace Trainer.Core
+namespace Trainer.Core.Context
 {
 	public class TrainerContext : DbContext
 	{
 		public TrainerContext() : base()
 		{
-
+			Database.SetInitializer<TrainerContext>(new DropCreateDatabaseIfModelChanges<TrainerContext>());
 		}
 
 		public DbSet<Player> Players { get; set; }

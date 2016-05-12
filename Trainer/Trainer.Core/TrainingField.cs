@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace Trainer.Core
 		{
 			Address = address;
 		}
-		public int Id { get; set; }
+
+		[Key]
+		public int TrainingFieldID { get; set; }
 
 		public string Address { get; private set; }
 		

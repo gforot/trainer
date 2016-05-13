@@ -11,5 +11,6 @@ namespace Trainer.Core.Context
 
 		public DbSet<Player> Players { get; set; }
 		public DbSet<TrainingField> TrainingFields { get; set; }
+		public DbSet<Team> Teams { get; set; }
 	}
 }

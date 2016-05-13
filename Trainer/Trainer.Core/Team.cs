@@ -1,37 +1,21 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Trainer.Core
 {
 	public class Team
 	{
-		private readonly List<Player> _players;
-
-		public Team(Staff staff)
+		public Team()
 		{
-			Staff = staff;
 
-			_players = new List<Player>();
 		}
 
-		public Staff Staff { get; private set; }
+		public int TeamId { get; set; }
 
-		public List<Player> Players { get { return _players; } }
+		public string Name { get; set; }
 
-		public void AddPlayer(Player player)
-		{
-			_players.Add(player);
-		}
+		public virtual ICollection<StaffPerson> StaffPersons { get; set; }
 
-		public void AddPlayers(IEnumerable<Player> players)
-		{
-			_players.AddRange(players);
-		}
-
-		public Player GetPlayer(int id)
-		{
-			return _players.FirstOrDefault(p => p.Id == id);
-		}
+		public virtual ICollection<Player> Players { get; set; }
 
 	}
 }

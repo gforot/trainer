@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trainer.Core
 {
@@ -11,6 +12,13 @@ namespace Trainer.Core
 		}
 
 		public Role Role { get; set; }
+
+
+
+		public int TeamId { get; set; }
+
+		[ForeignKey("TeamId")]
+		public virtual Team Team { get; set; }
 
 		public override string ToString()
 		{

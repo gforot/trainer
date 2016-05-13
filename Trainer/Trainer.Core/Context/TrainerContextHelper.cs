@@ -15,6 +15,23 @@ namespace Trainer.Core.Context
 			}
 		}
 
+		public static void AddTeam(Team p)
+		{
+			using (TrainerContext db = new TrainerContext())
+			{
+				db.Teams.Add(p);
+				db.SaveChanges();
+			}
+		}
+
+		public static Team GetTeam(int id)
+		{
+			using (TrainerContext db = new TrainerContext())
+			{
+				return db.Teams.FirstOrDefault(t => t.TeamId == id);
+			}
+		}
+
 		public static List<Player> GetPlayers()
 		{
 			using (TrainerContext db = new TrainerContext())

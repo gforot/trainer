@@ -9,15 +9,12 @@ namespace Trainer.Core
 {
 	public class TrainingField
 	{
-		public TrainingField(string address)
-		{
-			Address = address;
-		}
-
 		[Key]
 		public int TrainingFieldID { get; set; }
 
-		public string Address { get; private set; }
+        public string Name { get; set; }
+
+        public string Address { get; set; }
 		
 	}
 }

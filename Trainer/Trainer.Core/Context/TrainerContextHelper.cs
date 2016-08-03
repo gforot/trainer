@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
-using System;
+using System.Linq;
 
 namespace Trainer.Core.Context
 {
@@ -9,7 +8,7 @@ namespace Trainer.Core.Context
 	{
 		public static void AddPlayer(Player p)
 		{
-			using(TrainerContext db = new TrainerContext())
+			using (TrainerContext db = new TrainerContext())
 			{
 				db.Players.Add(p);
 				db.SaveChanges();
@@ -42,22 +41,22 @@ namespace Trainer.Core.Context
 			}
 		}
 
-        public static void AddTrainingField(TrainingField p)
-        {
-            using (TrainerContext db = new TrainerContext())
-            {
-                db.TrainingFields.Add(p);
-                db.SaveChanges();
-            }
-        }
+		public static void AddTrainingField(TrainingField p)
+		{
+			using (TrainerContext db = new TrainerContext())
+			{
+				db.TrainingFields.Add(p);
+				db.SaveChanges();
+			}
+		}
 
-        public static void AddTraining(Training t)
-        {
-            using (TrainerContext db = new TrainerContext())
-            {
-                db.Trainings.Add(t);
-                db.SaveChanges();
-            }
-        }
-    }
+		public static void AddTraining(Training t)
+		{
+			using (TrainerContext db = new TrainerContext())
+			{
+				db.Trainings.Add(t);
+				db.SaveChanges();
+			}
+		}
+	}
 }

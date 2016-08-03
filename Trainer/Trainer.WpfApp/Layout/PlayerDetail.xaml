@@ -8,9 +8,26 @@
              mc:Ignorable="d" 
 						 d:DataContext="{x:Static design:DesignTimeDataContext.PlayerDetailData}"
              d:DesignHeight="300" d:DesignWidth="300">
-	<StackPanel>
-		<TextBlock Text="{Binding Surname}" />
-		<TextBlock Text="{Binding Name}" />
-		<TextBlock Text="{Binding Team}" />
-	</StackPanel>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="50" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition MinHeight="32" Height="Auto"/>
+			<RowDefinition MinHeight="32" Height="Auto"/>
+			<RowDefinition MinHeight="32" Height="Auto"/>
+			<RowDefinition MinHeight="32" Height="Auto"/>
+		</Grid.RowDefinitions>
+		<TextBlock Text="Surname:" Grid.Row="1" />
+		<TextBlock Text="Name:"  />
+		<TextBlock Text="Team:" Grid.Row="2" />
+		<TextBlock Text="Role:" Grid.Row="3" />
+		<TextBlock Text="{Binding Surname}" Grid.Row="1" Grid.Column="2" />
+		<TextBlock Text="{Binding Name}" Grid.Column="2" />
+		<TextBlock Text="{Binding Team}" Grid.Row="2" Grid.Column="2" />
+		<TextBlock Text="{Binding Role}" Grid.Row="3" Grid.Column="2" />
+	</Grid>
 </UserControl>

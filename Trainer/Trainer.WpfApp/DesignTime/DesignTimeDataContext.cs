@@ -29,13 +29,14 @@ namespace Trainer.WpfApp.DesignTime
 			public string Name { get { return _player.Name; } }
 			public string Surname { get { return _player.Surname; } }
 			public Team Team { get { return _player.Team; } }
+			public Role Role { get { return _player.Role; } }
 
 			public string PH { get { return "my Placeholder"; } }
 		}
 
 		public static Player CreateSamplePlayer()
 		{
-			return new Player() { Name = "Gonzalo", Surname="Higuain", Team = new Team() { Name = "Juventus"} };
+			return new Player() { Name = "Gonzalo", Surname="Higuain", Role = Role.AEst | Role.ACen, Team = new Team { Name = "Juventus"} };
 		}
 	}
 }
